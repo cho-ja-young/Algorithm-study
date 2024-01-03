@@ -21,6 +21,8 @@
 
 '''
 
+# 반복되는 수열을 파악하여 문제를 푼 결과
+
 n, m ,k = map(int, input.split())
 
 data = list(map(int, input.split()))

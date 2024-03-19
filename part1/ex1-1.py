@@ -21,9 +21,9 @@
 
 '''
 
-n, m ,k = map(int, input.split())
+n, m ,k = map(int, input().split())
 
-data = list(map(int, input.split()))
+data = list(map(int, input().split()))
 
 data.sort() # 입력받은 수 정렬
 

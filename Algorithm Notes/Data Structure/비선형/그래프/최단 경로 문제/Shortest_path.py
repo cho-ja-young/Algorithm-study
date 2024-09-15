@@ -17,7 +17,7 @@ class Graph:
         distances = {node: float('inf') for node in self.nodes}
         distances[start] = 0
         priority_queue = [(0, start)]
-
+        
         while priority_queue:
             current_distance, current_node = heapq.heappop(priority_queue)
 

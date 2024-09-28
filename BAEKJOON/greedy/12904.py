@@ -23,6 +23,22 @@
 # S를 T로 바꿀 수 있으면 1을 없으면 0을 출력한다.
 
 '''
-
+맨 뒷자리가 다르면 같아지도록 수행
+T가 S가 될 수 있는지 생각
 
 '''
+
+S = list(map(str, input()))
+T = list(map(str, input()))
+
+while len(S) != len(T):
+    if T[-1] == 'A': # 뒤에 A를 빼기
+        T.pop()
+    elif T[-1] == 'B': # 뒤에 B를 빼고 문자열을 뒤집기
+        T.pop()
+        T = T[::-1]
+
+if S == T:
+    print(1)
+else:
+    print(0)

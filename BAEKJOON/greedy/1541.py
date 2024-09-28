@@ -24,6 +24,9 @@
 
 '''
 
+# 1번째 시도
+# 00009-00009 예제에서 실패
+'''
 data = list(map(str, input().split('-')))
 
 # 각 요소를 계산하기 위해 리스트를 순회하며 eval()을 사용
@@ -33,4 +36,26 @@ start = result[0]
 for i in result[1:]:
     start -= i
 
+print(start)
+
+-> str 로 만들면 안 될 것 같음
+'''
+
+
+
+data = input().split('-')
+
+result = []
+
+for i in data:
+    sum = 0
+    data2 = i.split('+')
+    for j in data2:
+        sum += int(j) # 00009 같은 예제를 통과할 수 있도록 
+    result.append(sum)
+
+start = result[0]
+
+for i in result[1:]:
+    start -= i
 print(start)

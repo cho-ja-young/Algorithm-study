@@ -19,3 +19,18 @@
 # 출력
 # 첫째 줄에 문제의 정답을 출력한다.
 
+'''
+'-' 를 기준으로 나눠서 계산을 하고 마지막에 '-' 실행
+
+'''
+
+data = list(map(str, input().split('-')))
+
+# 각 요소를 계산하기 위해 리스트를 순회하며 eval()을 사용
+result = [eval(item) for item in data]
+start = result[0]
+
+for i in result[1:]:
+    start -= i
+
+print(start)

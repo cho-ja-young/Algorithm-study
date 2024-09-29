@@ -26,11 +26,13 @@
 '''
 '0' 을 기준으로 나눠서 나눠진 개수를 이용해보기
 
+-> 연속된 문자를 묶어서 리스트에 추가 
+
 '''
 
 # 1번째 시도
 # 11001100110011000001 예제에서 실패
- 
+'''
 data = input().split('0')
 print(data)
 
@@ -51,3 +53,29 @@ else:
     answer = len(result1)
 
 print(answer)
+'''
+
+# 2번째 시도
+# 
+
+
+s = input()
+current_group = s[0] # 첫 번째 문자를 기준으로 초기 그룹 설정
+
+result = []
+count = 0
+
+# 문자열을 순회하면서 연속된 문자를 그룹으로 묶음
+for char in s[1:]:
+    if char == current_group[-1]:  # 연속된 문자인 경우
+        current_group += char
+    else:  # 새로운 문자가 나온 경우
+        result.append(current_group)
+        current_group = char  # 새로운 그룹 시작
+        count += 1
+
+# 마지막 그룹을 결과 리스트에 추가
+result.append(current_group)
+count += 1
+
+print(count//2)

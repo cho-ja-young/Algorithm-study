@@ -24,9 +24,32 @@
 # 티셔츠 만드는 비용이 최소가 되도록 K개의 조로 나누었을 때, 티셔츠 만드는 비용을 출력한다.
 
 '''
- 
+티셔츠 만드는 비용이 최소가 된다는 것은, 키 차이가 얼마 나지 않도록 만든다는 것.
+조를 묶는 두명의 유치원생을 고르는 것이 그리디 알고리즘이 사용되는 곳.
 
 '''
 
 # 1번째 시도
-# 
+# 풀이 보고 해결, 그래도 이해가 필요함
+
+n,k = map(int,input().split())
+
+data = list(map(int,input().split()))
+
+# 원생들의 키 차이를 나타내는 배열
+array = []
+for i in range(1, n):
+    array.append(data[i] - data[i-1])
+
+# 한 조를 줄일 때 마다 가장 최소 비용을 더해주면 됨. 즉 n - k만큼 더하면 k조가 되는 최소 비용
+array.sort(reverse=True)
+print(sum(array[k-1:]))
+
+'''
+array.sort()
+ans = 0
+for i in range(n - k):
+    c = array[i]
+    ans += c
+print(ans)
+'''
